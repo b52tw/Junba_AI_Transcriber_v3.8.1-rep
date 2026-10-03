@@ -1,0 +1,16 @@
+Junba AI Transcriber v3.8.1 REPACK - Validation
+
+修正上一包已知兩個建置阻斷原因：
+[1] Windows Hotfix Repo 缺少完整 v3.8 原始碼
+    -> 新 Workflow 會 checkout 固定 commit 的完整 v3.8 原始碼到 src/ 後才套 patch。
+[2] Android: sdkmanager: command not found
+    -> 新 Workflow 會定位 sdkmanager；若 runner 沒有則自動 bootstrap command-line tools。
+
+Patch 靜態檢查包含：
+- 核對播放器按鈕可手動選檔
+- Markdown 選項及 md 匯出
+- Word landscape + 欄寬 1.45 / 0.70 / 8.10 inches
+- 每支音檔輸出 01_原始檔名、02_原始檔名……資料夾
+- HTML 可選 .md/.markdown
+
+注意：Windows EXE 與 Android APK 的最終二進位檔仍需由 GitHub Actions 的 Windows/Ubuntu runner 實際編譯後才算完成。
